@@ -16,7 +16,7 @@ public class MicrosoftTranslatorAndroidTestActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         text = new TextView(this);
-        text.setText("Hello World, Android - TITTTIES");
+        text.setText("<This text should change after translation has occurred in AsyncTask>");
         setContentView(text);
         new MyAsyncTask() { 
             protected void onPostExecute(Boolean result) {
@@ -28,8 +28,8 @@ public class MicrosoftTranslatorAndroidTestActivity extends Activity {
     class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
         @Override
         protected Boolean doInBackground(Void... arg0) {
-        	Translate.setClientId("YOUR_CLIENT_ID");
-            Translate.setClientSecret("YOUR_CLIENT_SECRET");
+        	Translate.setClientId("MicrosoftTranslatorJavaAPI");
+            Translate.setClientSecret("0VHbhXQnJrZ7OwVqcoX/PDZlyLJS9co3cVev1TPr8iM=");
             try {
             	translatedText = Translate.execute("I should probably set this to something a little less profane", Language.ENGLISH, Language.FRENCH);
             } catch(Exception e) {
