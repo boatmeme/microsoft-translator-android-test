@@ -28,10 +28,10 @@ public class MicrosoftTranslatorAndroidTestActivity extends Activity {
     class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
         @Override
         protected Boolean doInBackground(Void... arg0) {
-        	Translate.setClientId("MicrosoftTranslatorJavaAPI");
-            Translate.setClientSecret("0VHbhXQnJrZ7OwVqcoX/PDZlyLJS9co3cVev1TPr8iM=");
+        	Translate.setClientId("YOUR_CLIENT_ID");
+            Translate.setClientSecret("YOUR_CLIENT_SECRET");
             try {
-            	translatedText = Translate.execute("Hey buddy. Fuck you and the horse you rode in on", Language.ENGLISH, Language.FRENCH);
+            	translatedText = Translate.execute("I should probably set this to something a little less profane", Language.ENGLISH, Language.FRENCH);
             } catch(Exception e) {
             	translatedText = e.toString();
             }
